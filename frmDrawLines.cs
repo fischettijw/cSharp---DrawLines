@@ -19,7 +19,13 @@ namespace cSharp___DrawLines
         int xStart, yStart;
         int xEnd, yEnd;
 
-        int numOfLines, angle, length, increment = 0;
+        int numOfLines, angle, angleOrig, length, increment = 0;
+
+        private void frmDrawLines_Resize(object sender, EventArgs e)
+        {
+            frmDrawLines_Load(null, null);
+            btnGO_Click(null, null);
+        }
 
         private void frmDrawLines_Load(object sender, EventArgs e)
         {
@@ -41,6 +47,7 @@ namespace cSharp___DrawLines
         {
             numOfLines = int.Parse(txtNumOfLines.Text);
             angle = int.Parse(txtAngle.Text);
+            angleOrig = angle;
             length = int.Parse(txtLength.Text);
             increment = int.Parse(txtIncrement.Text);
             xStart = xCenter;
@@ -69,8 +76,7 @@ namespace cSharp___DrawLines
             xEnd = (int)xStart + Convert.ToInt32(Math.Cos(deg2rad(angle)) * length);
             yEnd = (int)yStart + Convert.ToInt32(Math.Sin(deg2rad(angle)) * length);
             g.DrawLine(myPen, xStart, yStart, xEnd, yEnd);
-            //MessageBox.Show(Convert.ToString(angle));
-            angle += int.Parse(txtAngle.Text);
+            angle += angleOrig;
             length += increment;
             xStart = xEnd;
             yStart = yEnd;

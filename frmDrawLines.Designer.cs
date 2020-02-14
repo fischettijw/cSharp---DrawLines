@@ -179,6 +179,7 @@
             this.Name = "frmDrawLines";
             this.Text = "cSharp - DrawLines";
             this.Load += new System.EventHandler(this.frmDrawLines_Load);
+            this.Resize += new System.EventHandler(this.frmDrawLines_Resize);
             this.pnlUI.ResumeLayout(false);
             this.pnlUI.PerformLayout();
             this.ResumeLayout(false);

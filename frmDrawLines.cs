@@ -24,15 +24,26 @@ namespace cSharp___DrawLines
         private void frmDrawLines_Load(object sender, EventArgs e)
         {
             this.DoubleBuffered = true;
+            xCenter = pnlCanvas.Width / 2;
+            yCenter = pnlCanvas.Height / 2;
+            xStart = xCenter;
+            yStart = yCenter;
+            xEnd = xCenter;
+            yEnd = yCenter;
         }
 
-        public frmDrawLines()
+            public frmDrawLines()
         {
             InitializeComponent();
         }
 
         private void btnGO_Click(object sender, EventArgs e)
         {
+            numOfLines = int.Parse(txtNumOfLines.Text);
+            angle = int.Parse(txtAngle.Text);
+            length = int.Parse(txtLength.Text);
+            increment = int.Parse(txtAngle.Text);
+
             pnlCanvas.Refresh();
         }
 
@@ -53,7 +64,20 @@ namespace cSharp___DrawLines
 
         private void drawLine()
         {
-            
+            xEnd = (int)xStart + Convert.ToInt32(Math.Cos(deg2rad(angle)) * length);
+            yEnd = (int)yStart + Convert.ToInt32(Math.Sin(deg2rad(angle)) * length);
+            g.DrawLine(myPen, xStart, yStart, xEnd, yEnd);
+            //MessageBox.Show(Convert.ToString(angle));
+            angle += int.Parse(txtAngle.Text);
+            length += increment;
+            xStart = xEnd;
+            yStart = yEnd;
+        }
+        
+        private double deg2rad(double degrees)
+        {
+            double radians = (Math.PI / 180) * degrees;
+            return (radians);
         }
     }
 }

@@ -42,7 +42,9 @@ namespace cSharp___DrawLines
             numOfLines = int.Parse(txtNumOfLines.Text);
             angle = int.Parse(txtAngle.Text);
             length = int.Parse(txtLength.Text);
-            increment = int.Parse(txtAngle.Text);
+            increment = int.Parse(txtIncrement.Text);
+            xStart = xCenter;
+            yStart = yCenter;
 
             pnlCanvas.Refresh();
         }
@@ -67,7 +69,7 @@ namespace cSharp___DrawLines
             xEnd = (int)xStart + Convert.ToInt32(Math.Cos(deg2rad(angle)) * length);
             yEnd = (int)yStart + Convert.ToInt32(Math.Sin(deg2rad(angle)) * length);
             g.DrawLine(myPen, xStart, yStart, xEnd, yEnd);
-            MessageBox.Show(Convert.ToString(angle));
+            //MessageBox.Show(Convert.ToString(angle));
             angle += int.Parse(txtAngle.Text);
             length += increment;
             xStart = xEnd;

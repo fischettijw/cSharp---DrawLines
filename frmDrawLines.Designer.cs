@@ -116,11 +116,11 @@
             this.lblIncrement.AutoSize = true;
             this.lblIncrement.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncrement.ForeColor = System.Drawing.Color.White;
-            this.lblIncrement.Location = new System.Drawing.Point(332, 6);
+            this.lblIncrement.Location = new System.Drawing.Point(334, 6);
             this.lblIncrement.Name = "lblIncrement";
-            this.lblIncrement.Size = new System.Drawing.Size(99, 24);
+            this.lblIncrement.Size = new System.Drawing.Size(94, 24);
             this.lblIncrement.TabIndex = 3;
-            this.lblIncrement.Text = "Imcrement";
+            this.lblIncrement.Text = "Increment";
             this.lblIncrement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLength
